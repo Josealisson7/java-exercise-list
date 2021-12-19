@@ -2,6 +2,8 @@ package br.com.exercises.paralelism.threadclass;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ParalelismThread {
@@ -34,7 +36,7 @@ public class ParalelismThread {
         long startTime = System.currentTimeMillis();
         try {
             for (int it = 0; it < 3; it++) {
-                String filename = "File - " + it;
+                String filename = "File-" + it;
                 PrintWriter writer = new PrintWriter(DIRECTORY + filename, "UTF-8");
                 writer.println("Hi!! I was created by running the system");
                 writer.close();
@@ -47,6 +49,7 @@ public class ParalelismThread {
 
     public static void createFile() {
         try {
+            createDirectory();
             String threadName = Thread.currentThread().getName();
             PrintWriter writer = new PrintWriter(DIRECTORY + threadName, "UTF-8");
             writer.println("thread " + threadName + " created me");
@@ -55,5 +58,9 @@ public class ParalelismThread {
         } catch (IOException e) {
             System.out.println("There was an error creating the files.");
         }
+    }
+
+    public static void createDirectory() throws IOException {
+        Files.createDirectories(Paths.get(DIRECTORY));
     }
 }
