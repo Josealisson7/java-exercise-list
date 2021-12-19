@@ -19,6 +19,10 @@ This project aims to work, through small tasks, resources used in the daily life
   * map
   * reduce
   * filter
+* [HttpRequest](https://mkyong.com/java/java-11-httpclient-examples/)
+  * HttpClient
+  * HttpRequest
+  * HttpResponse
 
  ### <i> Frameworks and languages: </i>
 - [Java 8 +](https://www.oracle.com/java/technologies/downloads/)
