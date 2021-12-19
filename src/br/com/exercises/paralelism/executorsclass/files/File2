@@ -1,0 +1,1 @@
+Concurrency refers to things happening in some unspecified order. Multitasking - executing multiple programs by interleaving instructions via time slicing - is an good way to think about this sense of concurrency.
